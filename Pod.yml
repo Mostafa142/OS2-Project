@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-project-pod
+  labels: 
+    app: os2-project
+spec:
+  containers:
+    - name: os2-project
+      image: mofathi/os2-project
+      imagePullPolicy: IfNotPresent
+      ports: 
+        - containerPort: 80
+     

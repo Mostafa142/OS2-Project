@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-project-deployment
+spec:
+  replicas: 2
+
+  selector: 
+    matchLabels: 
+      app: my-project
+
+  template: 
+    metadata: 
+      name: my-project
+      labels: 
+        app: my-project
+    spec: 
+      containers: 
+        - name: custom-image
+          image: mofathi/os2-project
+          imagePullPolicy: IfNotPresent
+          ports: 
+            - containerPort: 80       
